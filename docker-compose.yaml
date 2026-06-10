@@ -1,0 +1,17 @@
+services:
+  watchtower:
+    image: nickfedor/watchtower
+    environment:
+      -  WATCHTOWER_POLL_INTERVAL=60 # Poll every 60 seconds
+      -  WATCHTOWER_LABEL_ENABLE=true
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    container_name: watchtower
+
+  app:
+    image: miikkavaananen/docker:pipeline:latest
+    ports:
+      8080:8080
+    container_name: docker-pipeline-app
+    labels:
+      - com.centurylinklabs.watchtower.enable=true
