@@ -9,7 +9,7 @@ services:
     container_name: watchtower
 
   app:
-    image: miikkavaananen/docker:pipeline:latest
+    image: miikkavaananen/docker-pipeline:latest
     ports:
       -  8080:8080
     container_name: docker-pipeline-app
