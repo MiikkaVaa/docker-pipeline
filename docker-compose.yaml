@@ -11,7 +11,7 @@ services:
   app:
     image: miikkavaananen/docker:pipeline:latest
     ports:
-      8080:8080
+      -  8080:8080
     container_name: docker-pipeline-app
     labels:
       - com.centurylinklabs.watchtower.enable=true
